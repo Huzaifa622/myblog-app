@@ -12,7 +12,7 @@ const Mydiv = ({ userId }) => {
       }}
     >
       {" "}
-      View all more
+      View all
     </div>
   );
 };

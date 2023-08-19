@@ -11,7 +11,7 @@ const DashboardPage = async () => {
   const user = await currentUser();
   const blogs = await prisma.userBlog.findMany({
     where: {
-      userId: userId,
+      userId
     },
     orderBy: {
       createdAt: "desc",

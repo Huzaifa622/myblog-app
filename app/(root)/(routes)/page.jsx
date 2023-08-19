@@ -13,16 +13,16 @@ const Homepage = async () => {
   
   return (
     <div className="space-y-8">
-      <Heading>Welcome To Bloggify</Heading>
+      <Heading>Welcome</Heading>
       <div className="px-4 ">
         <div className="px-2 mt-4 md:pr-20 mr-20">
           <p className="text-xl font-semibold text-muted-foreground">
-            All Blogs
+           Blogs
           </p>
           <div className="grid grid-cols-3 mt-4 mb-3 relative">
             {blogs.length>0?(blogs.map((blog) => (
               <Card user={false} blog={blog} cond={true} />
-            ))):"No Any blogs"}
+            ))):"No blogs"}
             
           </div>
         </div>

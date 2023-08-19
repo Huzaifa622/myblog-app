@@ -39,7 +39,7 @@ const DashboardForm = () => {
     },
   });
   const isLoading = form.formState.isSubmitting;
-  const onSubmit = async (values) => {
+  const onSubmitHandle = async (values) => {
     try {
       const post = await axios.post("/api/dashboard", values);
       router.refresh();
@@ -53,7 +53,7 @@ const DashboardForm = () => {
       <div className="bg-white w-[70%] shadow-xl p-10">
         <Form {...form}>
           <form
-            onSubmit={form.handleSubmit(onSubmit)}
+            onSubmit={form.handleSubmit(onSubmitHandle)}
             className="flex flex-col justify-center px-6 gap-8 mt-4 w-full "
           >
             <FormField
@@ -63,7 +63,7 @@ const DashboardForm = () => {
                 <FormItem className="w-[80%] ">
                   <FormControl>
                     <Input
-                      placeholder="Title..."
+                      placeholder="Title"
                       {...field}
                       className="outline-none border-none px-4 w-full ring-2 ring-offset-2 ring-blue-500"
                     />
@@ -79,7 +79,7 @@ const DashboardForm = () => {
                 <FormItem className="w-[80%] ">
                   <FormControl>
                     <Input
-                      placeholder="Whats in your mind..."
+                      placeholder="Whats in your mind"
                       {...field}
                       className="outline-none border-none px-4 w-full ring-2 ring-offset-2 ring-blue-500 h-16"
                     />
@@ -88,9 +88,9 @@ const DashboardForm = () => {
                 </FormItem>
               )}
             />
-            <div className="w-full ">
+            <div className="w-[90%] ">
               <Button type="submit" className="mb-4" disabled={isLoading}>
-                Publish Blog
+                Submit
               </Button>
             </div>
           </form>
